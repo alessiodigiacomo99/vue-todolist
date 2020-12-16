@@ -19,6 +19,7 @@
             <h2>todo list</h2>
             <ul>
                 <li v-for = "listItem in list"><span v-text ="listItem"></span><i class="fas fa-times-circle" @click = "rimuoviTask"></i></li>
+                <li v-if ="list.length == 0">Nulla da fare<i class="far fa-smile-wink"></i></li>
         </ul>
         <!-- /lista task -->
         </div> 
