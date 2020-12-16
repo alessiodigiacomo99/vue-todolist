@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.d-flex{
+    display: flex;
+}
+
+body{
+    background-color: lightblue;
+    height: 100vh;
+}
+
+.container{
+    width: 280px;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+.wrapper{
+    align-items: center;
+}
+img{
+    width: 200px;
+}
+
+.box{
+    padding: 10px 0;
+    justify-content: space-between;
+}
+
+button, input{
+    padding: 5px 10px;
+    border-radius: 10px;
+    border: 0px;
+}
+
+button:focus, input:focus{
+    outline: 0;
+}
+
+h4{
+    font-weight: 600;
+    color: black;
+}
+
+li{
+    list-style: none;
+    background-color:lightgrey;
+    font-size: 2rem;
+    color: black;
+}
