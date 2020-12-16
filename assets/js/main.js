@@ -9,7 +9,7 @@ Attenzione: l'utente non deve inserire tasks vuote ma almeno un tot di caratteri
 let root = new Vue ({
     el: "#root",
     data:{
-        list:[],
+        list:["do something", "do something", "do something else"],
         task: ""
     },
     methods:{
@@ -18,6 +18,9 @@ let root = new Vue ({
                 this.list.push(this.task);
                 this.task = "";
             }
+        },
+        rimuoviTask (){
+            this.list.pop(this.task)
         }
     }
 })

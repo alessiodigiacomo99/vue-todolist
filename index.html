@@ -18,10 +18,7 @@
             <!-- /box -->
             <h2>todo list</h2>
             <ul>
-                <li>do something<i class="fas fa-times-circle"></i></li>
-                <li>do else<i class="fas fa-times-circle"></i></li>
-                <li>do something else<i class="fas fa-times-circle"></i></li>
-                <li v-for = "listItem in list" v-text ="listItem"><i class="fas fa-times-circle"></i></li>
+                <li v-for = "listItem in list"><span v-text ="listItem"></span><i class="fas fa-times-circle" @click = "rimuoviTask"></i></li>
         </ul>
         <!-- /lista task -->
         </div> 
