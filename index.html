@@ -10,7 +10,8 @@
 <body>
     <div class="container d-flex" id="root">
         <div class="wrapper">
-            <img src="./assets/img/logo.svg" alt="">
+            <!-- <img src="./assets/img/logo.svg" alt=""> -->
+            <img src=https://www.google.com/logos/doodles/2020/december-holidays-days-2-30-6753651837108830.5-s.png alt="">
             <div class="box d-flex">
                 <input type="text" v-model="task" @keyup.enter = "creaTask">
                 <button @click ="creaTask">Add</button>
@@ -18,7 +19,7 @@
             <!-- /box -->
             <h2>todo list</h2>
             <ul>
-                <li v-for = "listItem in list"><span v-text ="listItem"></span><i class="fas fa-times-circle" @click = "rimuoviTask"></i></li>
+                <li v-for = "(listItem, index) in list"><span v-text ="listItem"></span><i class="fas fa-times-circle" @click = "rimuoviTask(index)"></i></li>
                 <li v-if ="list.length == 0">Nulla da fare<i class="far fa-smile-wink"></i></li>
         </ul>
         <!-- /lista task -->

@@ -11,8 +11,8 @@ let root = new Vue ({
                 this.task = "";
             }
         },
-        rimuoviTask (){
-            this.list.pop(this.task)
+        rimuoviTask (index){
+            this.list.splice(index, 1);
         }
     }
 })
