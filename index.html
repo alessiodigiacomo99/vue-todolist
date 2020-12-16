@@ -8,21 +8,26 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <div class="container d-flex">
+    <div class="container d-flex" id="root">
         <div class="wrapper">
             <img src="./assets/img/logo.svg" alt="">
-        <div class="box d-flex">
-            <input type="text">
-            <button>Add</button>
-        </div>
-        <h4 class="text-capitalize">todo list</h4>
-        <ul class="text-capitalize">
-            <li>lorem</li>
-            <li>lorem</li>
-            <li>lorem</li>
+            <div class="box d-flex">
+                <input type="text" v-model="task">
+                <button @click ="creaTask">Add</button>
+            </div>
+            <!-- /box -->
+            <h4 class="text-capitalize">todo list</h4>
+            <ul class="text-capitalize">
+                <li>lorem</li>
+                <li>lorem</li>
+                <li>lorem</li>
+                <li v-for = "listItem in list" v-text ="listItem"></li>
         </ul>
+        <!-- /lista task -->
         </div> 
+        <!-- /wrapper -->
     </div>
+    <!-- /container -->
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script src="./assets/js/main.js"></script>
