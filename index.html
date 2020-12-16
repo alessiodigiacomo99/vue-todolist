@@ -12,7 +12,7 @@
         <div class="wrapper">
             <img src="./assets/img/logo.svg" alt="">
             <div class="box d-flex">
-                <input type="text" v-model="task">
+                <input type="text" v-model="task" @keyup.enter = "creaTask">
                 <button @click ="creaTask">Add</button>
             </div>
             <!-- /box -->

@@ -17,7 +17,6 @@ let root = new Vue ({
             if (this.task.length >= 3){
                 this.list.push(this.task);
                 this.task = "";
-
             }
         }
     }
