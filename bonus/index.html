@@ -11,12 +11,14 @@
     <div class="container d-flex" id="root">
         <!-- <img src="./assets/img/logo.svg" alt=""> -->
         <img src=https://www.google.com/logos/doodles/2020/december-holidays-days-2-30-6753651837108830.5-s.png alt="">
+        
         <div class="box">
             <input type="text" v-model="task.compito" @keyup.enter = "creaTask">
             <button @click ="creaTask">Add</button>
         </div>
         <!-- /box -->
-        <div class="liste d-flex">
+
+        <div class="d-flex">
             <section id="todo">
                 <h2>todo list:</h2>
                 <ul>
@@ -31,6 +33,7 @@
                 </ul>
             </section>
             <!-- /lista task da fare-->
+
             <section id="undo">
                 <h2>lista task fatte:</h2>
                 <ul>
@@ -41,19 +44,22 @@
                 </ul>
             </section>
             <!-- /lista task fatte-->
+
             <section id="trash">
-                <h2>cestino:</h2>
+                <div class="d-flex">
+                    <h2>cestino:</h2>
+                    <i @click = "rimuoviTask(cestino)"class="fas fa-trash-alt"></i> 
+                </div>
                 <ul>
                     <li v-if ="cestino.length == 0">Cestino vuoto</li>
                     <li v-for = "(listItem, index) in cestino">
                         <span v-text = "listItem.compito"></span>
-                        <i @click = "rimuoviTask(index, cestino)"class="fas fa-trash-alt"></i>
                     </li>
                 </ul>
             </section>
             <!-- /cestino-->
+
         </div>
-    <!-- /wrapper -->
     </div>
     <!-- /container -->
 

@@ -51,7 +51,6 @@ h2{
     font-weight: 600;
     text-transform: capitalize;
     margin: 5px 20px;
-    
 }
 
 ul{
@@ -75,6 +74,10 @@ span input, #undo li span, #trash li span{
 
 #undo li span{
     margin-left: 10px;
+}
+
+i.fa-trash-alt{
+    align-self: center;
 }
 
 #todo i, #undo i.fa-times-circle, #trash i.fa-trash-alt{

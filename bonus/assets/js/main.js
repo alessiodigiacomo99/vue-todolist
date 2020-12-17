@@ -27,17 +27,12 @@ let root = new Vue ({
                 };
             }
         },
-        rimuoviTask (index, list){
-            list.splice(index, 1);
+        rimuoviTask(list){
+            list.splice(0, list.length)
         },
         spostaTask(index, listaPartenza, listaArrivo){
             listaArrivo.push(listaPartenza[index])
-            this.rimuoviTask(index, listaPartenza);
+            listaPartenza.splice(index, 1);
         }
     }
 })
-/* L'utente vuole poter modificare una task giá inserita
-ma vuole anche poter indicare che la task é stata completata
-inoltre se una task é stata completa allora vuole che venga inserita in un'altra colonna tipo "tasks completate"
-ah non é finita, dice che quando cancella una task, non vuole che questa venga subito rimossa, ma vuole che resti visibile ma venga spostata in una colonna tipo "cestino"
-si, l'utente é un ropi scatole, dice infine che vuole poter rimuovere tutte le tasks nel cestino cliccando su un pulsante tipo "svuota cestino" */
