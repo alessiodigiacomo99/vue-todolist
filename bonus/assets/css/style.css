@@ -12,6 +12,7 @@ body{
     height: 100vh;
 }
 
+/* /utility class */
 .container{
     flex-direction: column;
     height: 100%;
@@ -46,6 +47,7 @@ button{
 button:focus, input:focus{
     outline: 0;
 }
+/* /box */
 
 h2{
     font-weight: 600;
@@ -80,15 +82,19 @@ i.fa-trash-alt{
     align-self: center;
 }
 
-#todo i, #undo i.fa-times-circle, #trash i.fa-trash-alt{
+#todo i, #undo i.fa-times-circle, #trash i.fa-trash-alt, #trash:hover i.fa-trash-restore-alt{
     cursor: pointer;
     opacity: 0.5;
 }
 
-#todo i:hover, #undo i.fa-times-circle:hover, #trash i.fa-trash-alt:hover{
+#trash i.fa-trash-restore-alt{
+    opacity: 0;
+}
+
+#todo i:hover, #undo i.fa-times-circle:hover, #trash i:hover{
     opacity: 1;
     transition: all 0.2s;
     transform: scale(1.5);
     margin-top: 2px;
 }
-
+/* /todo undo trash */

@@ -53,7 +53,7 @@
                 <ul>
                     <li v-if ="cestino.length == 0">Cestino vuoto</li>
                     <li v-for = "(listItem, index) in cestino">
-                        <span v-text = "listItem.compito"></span>
+                        <span v-text = "listItem.compito"></span><i class="fas fa-trash-restore-alt" @click ="spostaTask(index, cestino, listaDaFare)"></i>
                     </li>
                 </ul>
             </section>
