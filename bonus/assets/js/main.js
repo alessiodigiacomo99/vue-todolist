@@ -2,6 +2,7 @@ let root = new Vue ({
     el: "#root",
     data:{
         listaFatti:[],
+        cestino:[],
         listaDaFare:[
             compitoUno = {
             compito: "do something",
@@ -26,13 +27,12 @@ let root = new Vue ({
                 };
             }
         },
-        rimuoviTask (index){
-            this.listaDaFare.splice(index, 1);
+        rimuoviTask (index, list){
+            list.splice(index, 1);
         },
-        spostaTask(index){
-            this.listaFatti.push(this.listaDaFare[index])
-            this.rimuoviTask(index);
-
+        spostaTask(index, listaPartenza, listaArrivo){
+            listaArrivo.push(listaPartenza[index])
+            this.rimuoviTask(index, listaPartenza);
         }
     }
 })

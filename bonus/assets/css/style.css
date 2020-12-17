@@ -67,18 +67,22 @@ li{
     width: 300px;
 }
 
-span input, #undo li span{
+span input, #undo li span, #trash li span{
     text-transform: capitalize;
     background-color:lightgrey;
     font-size: 18px;
 }
 
-#todo i{
+#undo li span{
+    margin-left: 10px;
+}
+
+#todo i, #undo i.fa-times-circle, #trash i.fa-trash-alt{
     cursor: pointer;
     opacity: 0.5;
 }
 
-#todo i:hover{
+#todo i:hover, #undo i.fa-times-circle:hover, #trash i.fa-trash-alt:hover{
     opacity: 1;
     transition: all 0.2s;
     transform: scale(1.5);

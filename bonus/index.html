@@ -24,23 +24,34 @@
                         <span>
                             <input type="text" v-model="listItem.compito">
                         </span>
-                        <i class="fas fa-check-circle" @click ="spostaTask(index)"></i>
-                        <i class="fas fa-times-circle" @click = "rimuoviTask(index)"></i>
+                        <i class="fas fa-check-circle" @click ="spostaTask(index, listaDaFare, listaFatti)"></i>
+                        <i class="fas fa-times-circle" @click = "spostaTask(index, listaDaFare, cestino)"></i>
                     </li>
                     <li v-if ="listaDaFare.length == 0">Nulla da fare<i class="far fa-smile-wink"></i></li>
                 </ul>
             </section>
-        <!-- /lista task da fare-->
-        <section id="undo">
-            <h2>lista task fatte:</h2>
-            <ul>
-                <li v-if ="listaFatti.length == 0">Ancora non hai fatto nulla<i class="far fa-sad-cry"></i></li>
-                <li v-for = "(listItem, index) in listaFatti">
-                    <span v-text = "listItem.compito"></span>
-                </li>
-            </ul>
-        </section>
-        <!-- /lista task fatte-->
+            <!-- /lista task da fare-->
+            <section id="undo">
+                <h2>lista task fatte:</h2>
+                <ul>
+                    <li v-if ="listaFatti.length == 0">Non ci sono cose fatte<i class="far fa-sad-cry"></i></li>
+                    <li v-for = "(listItem, index) in listaFatti">
+                        <span v-text = "listItem.compito"></span><i class="fas fa-times-circle" @click = "spostaTask(index, listaFatti, cestino)"></i>
+                    </li>
+                </ul>
+            </section>
+            <!-- /lista task fatte-->
+            <section id="trash">
+                <h2>cestino:</h2>
+                <ul>
+                    <li v-if ="cestino.length == 0">Cestino vuoto</li>
+                    <li v-for = "(listItem, index) in cestino">
+                        <span v-text = "listItem.compito"></span>
+                        <i @click = "rimuoviTask(index, cestino)"class="fas fa-trash-alt"></i>
+                    </li>
+                </ul>
+            </section>
+            <!-- /cestino-->
         </div>
     <!-- /wrapper -->
     </div>
