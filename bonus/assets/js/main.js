@@ -1,7 +1,8 @@
 let root = new Vue ({
     el: "#root",
     data:{
-        list:[
+        listaFatti:[],
+        listaDaFare:[
             compitoUno = {
             compito: "do something",
           },
@@ -19,15 +20,20 @@ let root = new Vue ({
     methods:{
         creaTask (){
             if (this.task.compito.length >= 3){
-                this.list.push(this.task);
+                this.listaDaFare.push(this.task);
                 this.task = {
                     compito: ""
                 };
             }
         },
         rimuoviTask (index){
-            this.list.splice(index, 1);
+            this.listaDaFare.splice(index, 1);
         },
+        spostaTask(index){
+            this.listaFatti.push(this.listaDaFare[index])
+            this.rimuoviTask(index);
+
+        }
     }
 })
 /* L'utente vuole poter modificare una task giá inserita

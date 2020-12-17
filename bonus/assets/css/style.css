@@ -19,12 +19,8 @@ body{
     align-items: center;
 }
 
-.wrapper{
-    width: 280px;
-}
-
 img{
-    width: 90%;
+    width: 200px;
     margin: 0 5%;
 }
 
@@ -54,7 +50,12 @@ button:focus, input:focus{
 h2{
     font-weight: 600;
     text-transform: capitalize;
-    margin: 5px 0;
+    margin: 5px 20px;
+    
+}
+
+ul{
+    margin: 0 10px;
 }
 
 li{
@@ -63,15 +64,24 @@ li{
     padding: 7px;
     display: flex;
     justify-content: space-between;
+    width: 300px;
 }
 
-span input{
+span input, #undo li span{
     text-transform: capitalize;
     background-color:lightgrey;
-    font-size: 1rem;
-    color: black;
+    font-size: 18px;
 }
 
-i{
+#todo i{
     cursor: pointer;
+    opacity: 0.5;
 }
+
+#todo i:hover{
+    opacity: 1;
+    transition: all 0.2s;
+    transform: scale(1.5);
+    margin-top: 2px;
+}
+

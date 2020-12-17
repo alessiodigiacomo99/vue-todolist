@@ -9,27 +9,40 @@
 </head>
 <body>
     <div class="container d-flex" id="root">
-        <div class="wrapper">
-            <!-- <img src="./assets/img/logo.svg" alt=""> -->
-            <img src=https://www.google.com/logos/doodles/2020/december-holidays-days-2-30-6753651837108830.5-s.png alt="">
-            <div class="box d-flex">
-                <input type="text" v-model="task.compito" @keyup.enter = "creaTask">
-                <button @click ="creaTask">Add</button>
-            </div>
-            <!-- /box -->
-            <h2>todo list</h2>
+        <!-- <img src="./assets/img/logo.svg" alt=""> -->
+        <img src=https://www.google.com/logos/doodles/2020/december-holidays-days-2-30-6753651837108830.5-s.png alt="">
+        <div class="box">
+            <input type="text" v-model="task.compito" @keyup.enter = "creaTask">
+            <button @click ="creaTask">Add</button>
+        </div>
+        <!-- /box -->
+        <div class="liste d-flex">
+            <section id="todo">
+                <h2>todo list:</h2>
+                <ul>
+                    <li v-for = "(listItem, index) in listaDaFare">
+                        <span>
+                            <input type="text" v-model="listItem.compito">
+                        </span>
+                        <i class="fas fa-check-circle" @click ="spostaTask(index)"></i>
+                        <i class="fas fa-times-circle" @click = "rimuoviTask(index)"></i>
+                    </li>
+                    <li v-if ="listaDaFare.length == 0">Nulla da fare<i class="far fa-smile-wink"></i></li>
+                </ul>
+            </section>
+        <!-- /lista task da fare-->
+        <section id="undo">
+            <h2>lista task fatte:</h2>
             <ul>
-                <li v-for = "(listItem, index) in list">
-                    <span>
-                        <input type="text" v-model="listItem.compito">
-                    </span>
-                    <i class="fas fa-times-circle" @click = "rimuoviTask(index)"></i>
+                <li v-if ="listaFatti.length == 0">Ancora non hai fatto nulla<i class="far fa-sad-cry"></i></li>
+                <li v-for = "(listItem, index) in listaFatti">
+                    <span v-text = "listItem.compito"></span>
                 </li>
-                <li v-if ="list.length == 0">Nulla da fare<i class="far fa-smile-wink"></i></li>
-        </ul>
-        <!-- /lista task -->
-        </div> 
-        <!-- /wrapper -->
+            </ul>
+        </section>
+        <!-- /lista task fatte-->
+        </div>
+    <!-- /wrapper -->
     </div>
     <!-- /container -->
 
